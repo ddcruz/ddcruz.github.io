@@ -1,0 +1,25 @@
+h1 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-series;
+    font-size: 30px;
+    color: teal;
+}
+
+/* hr {
+    color: teal;
+    size: 10;
+} */
+
+.homelink {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 20px;
+    color: whitesmoke;
+
+}
+
+.brandbox {
+    background-color: teal;   
+}
+
+/* .container {
+    margin: 2%;
+} */
