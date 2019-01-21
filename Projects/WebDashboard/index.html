@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Weather Analysis</title>
     <script
     src="https://code.jquery.com/jquery-3.3.1.min.js"
     integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -27,7 +27,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span> -->
             </button>
-            <a class="navbar-brand brandbox" href="./index.html"><div class="homelink">Lattitude</div></a>
+            <a class="navbar-brand brandbox" href="./index.html"><div class="homelink">Latitude</div></a>
             </div>
         
             <!-- Collect the nav links, forms, and other content for toggling -->
@@ -58,7 +58,7 @@
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
                 <ul class="dropdown-menu">
-                    <li><a href="#">Max Tempreature</a></li>
+                    <li><a href="#">Max Temperature</a></li>
                     <li><a href="#">Humidity</a></li>
                     <li><a href="#">Cloudiness</a></li>
                     <li><a href="#">Wind Speed</a></li>
@@ -73,23 +73,37 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-    <div class="container"></div>
-    
-    <div class="row">
-        <div class="col-md-8">
-            <h1>Summary: Latitude vs. X</h1>
-            <img src="./images/Fig1.png" alt="" width="40%" height="40%" align="left">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia consequuntur laudantium quos similique labore officiis laborum soluta veniam ex repudiandae asperiores vero recusandae eligendi illum veritatis nesciunt, enim tempora quasi. <br> <br>
+    <!-- <div class="box"> -->
+        <!-- <div class="container-fluid"> -->
+            <div class=" row sections">
+                <div class="col-md-7">
+                    <h1>Summary: Latitude vs. X</h1>
+                    <img class="largeimage" src="./images/Fig1.png" alt="">
+                    The purpose of this project was to analyze how weather changes as you get close to the equator.  To accomplish 
+                    the analysis we first pulled data from the <a href="https://openweathermap.org/api", target="_blank">OpenWeatherMap</a>
+                    API to assemble a data set on over 500 cities.<br> <br>
 
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus eum eius incidunt natus mollitia. Odio voluptatum laborum omnis provident, illum vel voluptate, sunt aspernatur odit, ab eaque necessitatibus! Ratione, vitae? <br>
-        </div>
-        <div class="col-md-4">
-            <h1>Visualizations</h1>
-            <img src="./images/Fig1.png" alt=""  width="40%" height="40%">
-            <img src="./images/Fig2.png" alt=""  width="40%" height="40%">
-            <img src="./images/Fig3.png" alt=""  width="40%" height="40%">
-            <img src="./images/Fig4.png" alt=""  width="40%" height="40%">
-        </div>
-    </div>
+                    After assembling the dataset, we used Matplotlib to plot various aspect of the weather vs. latitude.  Factors
+                    we looked at included Temperature, Cloudiness, Wind Speed and Humidity.  This site provides the source data and
+                    visualizations created as part of the analysis as well as explanations and descriptions of any trends and 
+                    correlations witnessed.<br>
+                </div>
+                <div class="col-md-5">
+                    <h1>Visualizations</h1>
+                    <img class="smallimages" src="./images/Fig1.png" alt="Temperature">
+                    <img class="smallimages" src="./images/Fig2.png" alt="Humidity">
+                    <img class="smallimages" src="./images/Fig3.png" alt="Cloudiness">
+                    <img class="smallimages" src="./images/Fig4.png" alt="Wind Speed">
+                </div>
+            </div>
+        <!-- </div> -->
+    <!-- </div> -->
+    <hr>
+    <!-- <div class="panel"> -->
+        <!-- <div class="panel-body">
+            Panel content
+        </div> -->
+        <div class="panel-footer">Copyright Coding Bootcamp 2019</div>
+     <!-- </div>     -->
 </body>
 </html>

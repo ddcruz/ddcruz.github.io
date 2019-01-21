@@ -4,22 +4,67 @@ h1 {
     color: teal;
 }
 
-/* hr {
+hr {
+    border-style: solid;
+    border-width: 5px;
     color: teal;
-    size: 10;
-} */
+    margin: 0%;
+}
 
 .homelink {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-size: 20px;
     color: whitesmoke;
-
+    /* margin: 0px 10px; */
 }
 
 .brandbox {
     background-color: teal;   
+    position: relative;
+    left: 20px;
+}
+
+.sections {
+    position: relative;
+    left: 30px;
+    background: white;
+    /* top: 30px; */
+    /* left: 40px; */
+}
+
+.box {
+    background: lightgrey;
+    top: 10px;
+    margin: 10px;
+}
+
+.smallimages {
+    width: 42%;
+    height: 42%;
+}
+
+.largeimage {
+    width: 60%;
+    height: 60%;
+    float: left;
+
+}
+.nav {
+    margin: 0%;
+}
+
+.navbar-default {
+    margin: 0%;
+}
+
+.panel-footer {
+    background: grey;
+    color: white;
+    font-size: 75%;
+    text-align: center;
 }
 
 /* .container {
-    margin: 2%;
+    margin: 15px;
+    background: lightgrey;
 } */
