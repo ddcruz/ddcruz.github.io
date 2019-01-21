@@ -8,6 +8,7 @@ h2 {
     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-series;
     font-size: 20px;
     color: teal;
+    text-align: center;
 }
 
 hr {
@@ -40,6 +41,12 @@ hr {
     height: 42%;
 }
 
+.mediumimages {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%
+}
 
 .largeimage {
     width: 60%;
@@ -62,11 +69,6 @@ hr {
     text-align: center;
 }
 
-.highlight2 {
-    background: teal;
-    color: white;
-}
-
 .highlight {
     border-style: solid;
     border-width: 2px;
@@ -87,3 +89,4 @@ hr {
         height: 45%;
     }
 }
+
