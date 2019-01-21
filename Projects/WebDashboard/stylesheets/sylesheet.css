@@ -24,18 +24,9 @@ hr {
     left: 20px;
 }
 
-.sections {
+.container-fluid {
     position: relative;
     left: 30px;
-    background: white;
-    /* top: 30px; */
-    /* left: 40px; */
-}
-
-.box {
-    background: lightgrey;
-    top: 10px;
-    margin: 10px;
 }
 
 .smallimages {
@@ -63,8 +54,3 @@ hr {
     font-size: 75%;
     text-align: center;
 }
-
-/* .container {
-    margin: 15px;
-    background: lightgrey;
-} */

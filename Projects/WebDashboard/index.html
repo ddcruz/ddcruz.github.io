@@ -6,54 +6,27 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Weather Analysis</title>
     <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>   
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous">
+    </script>   
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.collapsible/1.2/jquery.collapsible.min.js"></script>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./stylesheets/sylesheet.css">
 </head>
 <body>
     <nav class="navbar navbar-default">
         <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                 <span class="sr-only">Toggle navigation</span>
-                <!-- <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span> -->
             </button>
             <a class="navbar-brand brandbox" href="./index.html"><div class="homelink">Latitude</div></a>
             </div>
         
-            <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav">
-                <!-- <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li> -->
-                <!-- <li><a href="#">Link</a></li> -->
-                <!-- <li class="dropdown">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                    <li role="separator" class="divider"></li>
-                    <li><a href="#">One more separated link</a></li>
-                </ul>
-                </li> -->
-            </ul>
-            <!-- <form class="navbar-form navbar-left">
-                <div class="form-group">
-                <input type="text" class="form-control" placeholder="Search">
-                </div> -->
-                <!-- <button type="submit" class="btn btn-default">Submit</button> -->
-            <!-- </form> -->
+            <ul class="nav navbar-nav"></ul>
             <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
                 <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Plots<span class="caret"></span></a>
@@ -62,8 +35,6 @@
                     <li><a href="#">Humidity</a></li>
                     <li><a href="#">Cloudiness</a></li>
                     <li><a href="#">Wind Speed</a></li>
-                    <!-- <li role="separator" class="divider"></li>
-                    <li><a href="#">Separated link</a></li> -->
                 </ul>
                 </li>
                 <li><a href="#">Comparison</a></li>
@@ -73,31 +44,31 @@
         </div><!-- /.container-fluid -->
     </nav>
 
-    <!-- <div class="box"> -->
-        <!-- <div class="container-fluid"> -->
-            <div class=" row sections">
-                <div class="col-md-7">
-                    <h1>Summary: Latitude vs. X</h1>
-                    <img class="largeimage" src="./images/Fig1.png" alt="">
-                    The purpose of this project was to analyze how weather changes as you get close to the equator.  To accomplish 
-                    the analysis we first pulled data from the <a href="https://openweathermap.org/api", target="_blank">OpenWeatherMap</a>
-                    API to assemble a data set on over 500 cities.<br> <br>
 
-                    After assembling the dataset, we used Matplotlib to plot various aspect of the weather vs. latitude.  Factors
-                    we looked at included Temperature, Cloudiness, Wind Speed and Humidity.  This site provides the source data and
-                    visualizations created as part of the analysis as well as explanations and descriptions of any trends and 
-                    correlations witnessed.<br>
-                </div>
-                <div class="col-md-5">
-                    <h1>Visualizations</h1>
-                    <img class="smallimages" src="./images/Fig1.png" alt="Temperature">
-                    <img class="smallimages" src="./images/Fig2.png" alt="Humidity">
-                    <img class="smallimages" src="./images/Fig3.png" alt="Cloudiness">
-                    <img class="smallimages" src="./images/Fig4.png" alt="Wind Speed">
-                </div>
+    <div class="container-fluid">
+        <div class=" row">
+            <div class="col-md-7">
+                <h1>Summary: Latitude vs. X</h1>
+                <img class="largeimage" src="./images/Fig1.png" alt="">
+                The purpose of this project was to analyze how weather changes as you get close to the equator.  To accomplish 
+                the analysis we first pulled data from the <a href="https://openweathermap.org/api", target="_blank">OpenWeatherMap</a>
+                API to assemble a data set on over 500 cities.<br> <br>
+
+                After assembling the dataset, we used Matplotlib to plot various aspect of the weather vs. latitude.  Factors
+                we looked at included Temperature, Cloudiness, Wind Speed and Humidity.  This site provides the source data and
+                visualizations created as part of the analysis as well as explanations and descriptions of any trends and 
+                correlations witnessed.<br>
             </div>
-        <!-- </div> -->
-    <!-- </div> -->
+            <div class="col-md-5">
+                <h1>Visualizations</h1>
+                <img class="smallimages" src="./images/Fig1.png" alt="Temperature">
+                <img class="smallimages" src="./images/Fig2.png" alt="Humidity">
+                <img class="smallimages" src="./images/Fig3.png" alt="Cloudiness">
+                <img class="smallimages" src="./images/Fig4.png" alt="Wind Speed">
+            </div>
+        </div>
+    </div>
+
     <hr>
     <!-- <div class="panel"> -->
         <!-- <div class="panel-body">
