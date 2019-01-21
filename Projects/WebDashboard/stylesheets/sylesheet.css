@@ -4,6 +4,12 @@ h1 {
     color: teal;
 }
 
+h2 {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-series;
+    font-size: 20px;
+    color: teal;
+}
+
 hr {
     border-style: solid;
     border-width: 5px;
@@ -34,6 +40,7 @@ hr {
     height: 42%;
 }
 
+
 .largeimage {
     width: 60%;
     height: 60%;
@@ -53,4 +60,30 @@ hr {
     color: white;
     font-size: 75%;
     text-align: center;
+}
+
+.highlight2 {
+    background: teal;
+    color: white;
+}
+
+.highlight {
+    border-style: solid;
+    border-width: 2px;
+    color: teal;
+    margin: 0%; 
+}
+
+@media(max-width: 720px) {
+    .smallimages {
+        width: 20%;
+        height: 20%;
+    }
+}
+
+@media(max-width: 720px) {
+    .largeimage {
+        width: 45%;
+        height: 45%;
+    }
 }

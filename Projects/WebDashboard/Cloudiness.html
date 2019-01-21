@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Weather Analysis</title>
+    <title>Weather Analysis - Cloudiness</title>
     <script
         src="https://code.jquery.com/jquery-3.3.1.min.js"
         integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
@@ -33,7 +33,7 @@
                 <ul class="dropdown-menu">
                     <li><a href="./Temperature.html">Temperature</a></li>
                     <li><a href="./Humidity.html">Humidity</a></li>
-                    <li><a href="./Cloudiness.html">Cloudiness</a></li>
+                    <li class="highlight"><a href="./Cloudiness.html">Cloudiness</a></li>
                     <li><a href="./WindSpeed.html">Wind Speed</a></li>
                 </ul>
                 </li>
@@ -48,22 +48,15 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-md-7">
-                <h1>Summary: Latitude vs. X</h1>
-                <img class="largeimage" src="./images/Fig1.png" alt="">
-                The purpose of this project was to analyze how weather changes as you get close to the equator.  To accomplish 
-                the analysis we first pulled data from the <a href="https://openweathermap.org/api", target="_blank">OpenWeatherMap</a>
-                API to assemble a data set on over 500 cities.<br> <br>
-
-                After assembling the dataset, we used Matplotlib to plot various aspect of the weather vs. latitude.  Factors
-                we looked at included Temperature, Cloudiness, Wind Speed and Humidity.  This site provides the source data and
-                visualizations created as part of the analysis as well as explanations and descriptions of any trends and 
-                correlations witnessed.
+                <h1>Cloudiness</h1>
+                <img class="largeimage" src="./images/Fig3.png" alt="">
+                There is no strong relationship between latitude and cloudiness
             </div>
             <div class="col-md-5">
                 <h1>Visualizations</h1>
                 <a href="./Temperature.html"><img class="smallimages" src="./images/Fig1.png" alt="Temperature"></a>
-                <a href="./Temperature.html"><img class="smallimages" src="./images/Fig2.png" alt="Humidity"></a> 
-                <a href="./Cloudiness.html"><img class="smallimages" src="./images/Fig3.png" alt="Cloudiness"></a>
+                <a href="./Humidity.html"><img class="smallimages" src="./images/Fig2.png" alt="Humidity"></a> 
+                <a href="./Cloudiness.html"><img class="smallimages highlight" src="./images/Fig3.png" alt="Cloudiness"></a>
                 <a href="./WindSpeed.html"><img class="smallimages" src="./images/Fig4.png" alt="Wind Speed"></a>
             </div>
         </div>
