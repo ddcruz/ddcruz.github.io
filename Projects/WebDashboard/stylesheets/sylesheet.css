@@ -79,9 +79,12 @@ hr {
     margin: 0%; 
 }
 
-@media(max-width: 320px) {
+@media(max-width: 640px) {
     h1 {
-        size: 25px;        
+        size: 20px;        
+    }
+    h2 {
+        size: 10px;
     }
 }
 
