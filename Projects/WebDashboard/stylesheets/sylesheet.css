@@ -79,16 +79,16 @@ hr {
     margin: 0%; 
 }
 
-@media(max-width: 640px) {
-    h1 {
+@media(max-width: 480px) {
+    /* h1 {
         size: 20px;        
     }
     h2 {
         size: 10px;
-    }
-    /* .glyphicon-adjust {
-        display: none;
     } */
+    .glyphicon-adjust {
+        display: none;
+    }
 }
 
 @media(max-width: 720px) {
