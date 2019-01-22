@@ -86,9 +86,9 @@ hr {
     h2 {
         size: 10px;
     }
-    .glyphicon-adjust {
+    /* .glyphicon-adjust {
         display: none;
-    }
+    } */
 }
 
 @media(max-width: 720px) {
