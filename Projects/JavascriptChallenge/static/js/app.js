@@ -3,6 +3,7 @@ var tbody = d3.select('#ufo-table>tbody');
 
 //function to display the data
 function display(thisData) {
+    //loop thru the data and insert each cell value per row    
     thisData.forEach((x) => {
         tbody.append("tr");
         Object.entries(x).forEach(([key, value]) => {
@@ -18,8 +19,6 @@ function clearDisplay() {
 
 //on page load, display all the data
 display(data);
-
-//loop thru the data and insert each cell value per row
 
 //get a handle on the submit button
 var submit = d3.select('#filter-btn');
