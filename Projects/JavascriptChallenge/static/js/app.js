@@ -10,12 +10,12 @@ function display(thisData) {
             tbody.append("td").text(value);
         });
       });
-}
+};
 
 //function to clear the data
 function clearDisplay() {
     tbody.html("")
-}
+};
 
 //on page load, display all the data
 display(data);
