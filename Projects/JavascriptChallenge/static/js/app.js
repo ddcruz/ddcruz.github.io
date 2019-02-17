@@ -1,3 +1,48 @@
+//adding more filter criteria boxes
+//get a handle to the filters unordered list
+var filters = d3.select('#filters');
+
+//change the label
+filters.select('li').select('label').text("Set your filter criteria");
+
+//change the placeholder for date/time
+filters.select('#datetime').attr('placeholder', 'date');
+//set a default value for the #datetime Input
+// filters.select('#datetime').property('value', '1/1/2010')
+
+//add more filters
+var inputs = [
+    {
+        id: 'city'
+        , type: 'text'
+        , defaultValue: 'el cajon'
+    }
+    , {
+        id: 'state'
+        , type: 'text'
+        , defaultValue: 'ca'
+    }
+    , {
+        id: 'country'
+        , type: 'text'
+        , defaultValue: 'us'
+    }
+    , {
+        id: 'shape'
+        , type: 'text'
+        , defaultValue: 'triangle'
+    }
+];
+
+inputs.forEach(input=> {
+    filters.select('li').append('input')
+        .attr('class', 'form-control')
+        .attr('id', input.id)
+        .attr('type', input.type)
+        .attr('placeholder', input.id)
+        // .property('value', input.defaultValue)
+});
+
 //get a handle on the tbody
 var tbody = d3.select('#ufo-table>tbody');
 
@@ -14,7 +59,7 @@ function display(thisData) {
 
 //function to clear the data
 function clearDisplay() {
-    tbody.html("")
+    tbody.html("");
 };
 
 //on page load, display all the data
@@ -27,10 +72,22 @@ submit.on('click', function() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
 
-    // Select the input element and get the raw HTML node
-    var inputValue = d3.select("#datetime").property("value");
+    // get the inputValues
+    var inputValues = filters.selectAll('input').nodes().map(x=> {
+        return { 
+            id: x.id
+            , value: x.value
+        };
+    });
 
-    var filteredData = data.filter(row => row.datetime === inputValue);
+    //filter on them, ignoring the inputs with no values
+    var filteredData = data
+    inputValues.forEach(input=> {
+        if (!(input.value === '')) {
+            filteredData = filteredData.filter(row=> row[input.id] === input.value)
+        }        
+    });
+
     clearDisplay();
 
     display(filteredData);
