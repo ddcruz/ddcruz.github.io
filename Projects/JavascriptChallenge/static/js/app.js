@@ -1,47 +1,33 @@
-//adding more filter criteria boxes
+//adding more filter criteria input boxes
 //get a handle to the filters unordered list
 var filters = d3.select('#filters');
 
 //change the label
-filters.select('li').select('label').text("Set your filter criteria");
+filters.select('li').select('label').text('Set your filter criteria');
 
-//change the placeholder for date/time
+//change the placeholder value for date/time
 filters.select('#datetime').attr('placeholder', 'date');
-//set a default value for the #datetime Input
-// filters.select('#datetime').property('value', '1/1/2010')
 
 //add more filters
-var inputs = [
-    {
-        id: 'city'
-        , type: 'text'
-        , defaultValue: 'el cajon'
-    }
-    , {
-        id: 'state'
-        , type: 'text'
-        , defaultValue: 'ca'
-    }
-    , {
-        id: 'country'
-        , type: 'text'
-        , defaultValue: 'us'
-    }
-    , {
-        id: 'shape'
-        , type: 'text'
-        , defaultValue: 'triangle'
-    }
-];
-
-inputs.forEach(input=> {
-    filters.select('li').append('input')
+var inputFilters = ['city', 'state', 'country', 'shape']
+inputFilters.forEach(inputFilter=> {
+    filters.select('li')
+        .append('input')
         .attr('class', 'form-control')
-        .attr('id', input.id)
-        .attr('type', input.type)
-        .attr('placeholder', input.id)
-        // .property('value', input.defaultValue)
+        .attr('id', inputFilter)
+        .attr('type', 'text')
+        .attr('placeholder', inputFilter)
 });
+
+// //function to get unique values
+// function onlyUnique(value, index, self) { 
+//     return self.indexOf(value) === index;
+// }
+
+// var shapeDropDown = filters.select('li').append('select').attr('id', 'shapeDropDown')
+// data.map(x=> x.shape).sort().filter(onlyUnique).forEach(shape=> {
+//     shapeDropDown.append('option').attr('value', shape).text(shape)
+// })
 
 //get a handle on the tbody
 var tbody = d3.select('#ufo-table>tbody');
@@ -50,16 +36,16 @@ var tbody = d3.select('#ufo-table>tbody');
 function display(thisData) {
     //loop thru the data and insert each cell value per row    
     thisData.forEach((x) => {
-        tbody.append("tr");
+        tbody.append('tr');
         Object.entries(x).forEach(([key, value]) => {
-            tbody.append("td").text(value);
+            tbody.append('td').text(value);
         });
       });
 };
 
 //function to clear the data
 function clearDisplay() {
-    tbody.html("");
+    tbody.html('');
 };
 
 //on page load, display all the data
@@ -68,11 +54,12 @@ display(data);
 //get a handle on the submit button
 var submit = d3.select('#filter-btn');
 
+//implement the submit onclick event
 submit.on('click', function() {
     // Prevent the page from refreshing
     d3.event.preventDefault();
 
-    // get the inputValues
+    // get the inputValues from the form
     var inputValues = filters.selectAll('input').nodes().map(x=> {
         return { 
             id: x.id
@@ -80,7 +67,7 @@ submit.on('click', function() {
         };
     });
 
-    //filter on them, ignoring the inputs with no values
+    //filter on them, ignoring the inputs that have no values
     var filteredData = data
     inputValues.forEach(input=> {
         if (!(input.value === '')) {
@@ -92,3 +79,4 @@ submit.on('click', function() {
 
     display(filteredData);
 });
+

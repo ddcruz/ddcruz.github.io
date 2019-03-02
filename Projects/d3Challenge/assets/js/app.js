@@ -66,6 +66,18 @@ function renderCircles(circlesGroup, newXScale, chosenXaxis) {
   return circlesGroup;
 }
 
+//the text labels
+function renderCircleLabels(circleLabelsGroup, newXScale, chosenXaxis) {
+
+  circleLabelsGroup.transition()
+    .duration(1000)
+    .attr("x", d => newXScale(d[chosenXAxis]));
+
+  return circleLabelsGroup;
+}
+
+
+
 // function used for updating circles group with new tooltip
 function updateToolTip(chosenXAxis, circlesGroup) {
 
@@ -148,6 +160,21 @@ d3.csv(url)
     .attr("fill", "gold")
     .attr("opacity", ".5")
 
+  // text for the state abbr 
+  var circleLabelsGroup = chartGroup.selectAll('circle')
+    .enter()
+    .exit()
+    .data(results)
+    .enter()
+    .append("text")
+    .attr("x", d => xLinearScale(d[chosenXAxis]))
+    .attr("y", d => yLinearScale(d.healthcare))
+    .attr("text-anchor", "middle")
+    .attr('font-size', "10px")
+    .attr('fill', 'purple')
+    .attr("dy", ".3em")
+    .text(d => d.abbr)
+       
   // Create group for  2 x- axis labels
   var labelsGroup = chartGroup.append("g")
     .attr("transform", `translate(${width / 2}, ${height + 20})`);
@@ -183,7 +210,7 @@ d3.csv(url)
     .text("Lacks Healthcare (%)");
 
   // updateToolTip function above csv import
-  var circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
+  var circleLabelsGroup = updateToolTip(chosenXAxis, circleLabelsGroup);
 
   // x axis labels event listener
   labelsGroup.selectAll("text")
@@ -197,8 +224,6 @@ d3.csv(url)
         // replaces chosenXaxis with value
         chosenXAxis = value;
 
-        // console.log(chosenXAxis)
-
         // functions here found above csv import
         // updates x scale for new data
         xLinearScale = xScale(results, chosenXAxis);
@@ -209,8 +234,11 @@ d3.csv(url)
         // updates circles with new x values
         circlesGroup = renderCircles(circlesGroup, xLinearScale, chosenXAxis);
 
+        // update circle lables with new x values
+        circleLabelsGroup = renderCircleLabels(circleLabelsGroup, xLinearScale, chosenXAxis)
+
         // updates tooltips with new info
-        circlesGroup = updateToolTip(chosenXAxis, circlesGroup);
+        circleLabelsGroup = updateToolTip(chosenXAxis, circleLabelsGroup);
         
         // changes classes to change bold text
         if (chosenXAxis === "poverty") {
