@@ -111,8 +111,9 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 }
 
 // Retrieve data from the CSV file and execute everything below
-var url = 'https://raw.githubusercontent.com/the-Coding-Boot-Camp-at-UT/UTAUS201810DATA2/master/16_D3/Homework/Instructions/StarterCode/assets/data/data.csv?token=AIw9k9Zpo4VV5Ed_WPXZt74O4N8E4YClks5cg1THwA%3D%3D'
+// var url = 'https://raw.githubusercontent.com/the-Coding-Boot-Camp-at-UT/UTAUS201810DATA2/master/16_D3/Homework/Instructions/StarterCode/assets/data/data.csv?token=AIw9k9Zpo4VV5Ed_WPXZt74O4N8E4YClks5cg1THwA%3D%3D'
 // var url = 'assets/data/data.csv'
+var url = 'https://raw.githubusercontent.com/ddcruz/ddcruz.github.io/master/Projects/d3Challenge/assets/data/data.csv'
 d3.csv(url)
   .then(function(results) {
   // parse data
