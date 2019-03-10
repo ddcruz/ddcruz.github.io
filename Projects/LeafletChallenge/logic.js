@@ -10,9 +10,7 @@ var colorList = [
     , '#FF0000'
   ]
 
-
 // Store our API endpoint inside queryUrl
-// var queryUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson'
 var queryUrl = 'https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_month.geojson'
 
 // var geoJSON
@@ -24,7 +22,7 @@ d3.json(queryUrl, function(data) {
 
 function createFeatures(earthquakeData) {
   // Define a function we want to run once for each feature in the features array
-  // Give each feature a popup describing the place and time of the earthquake
+  // Give each feature a popup describing the place time and magnitude of the earthquake
   function onEachFeature(feature, layer) {
     layer.bindPopup("<h3>" + feature.properties.title + "</h3><hr>" 
     + "<p>" + new Date(feature.properties.time) + "</p>"
@@ -33,28 +31,28 @@ function createFeatures(earthquakeData) {
   }
 
   function fillColor (mag) {
-    if (mag > 7) {
+    if (mag > 7.0) {
       return colorList[8]  
     }
-    else if (mag > 6) {
+    else if (mag > 6.0) {
       return colorList[7]
     }
-    else if (mag > 5) {
+    else if (mag > 5.0) {
       return colorList[6]
     }
-    else if (mag > 4) {
+    else if (mag > 4.0) {
       return colorList[5]
     }
-    else if (mag > 3) {
+    else if (mag > 3.0) {
       return colorList[4]
     }
-    else if (mag > 2) {
+    else if (mag > 2.0) {
       return colorList[3]
     }
-    else if (mag > 1) {
+    else if (mag > 1.0) {
       return colorList[2]
     }
-    else if (mag > 0) {
+    else if (mag > 0.0) {
       return colorList[1]
     }
     else {
